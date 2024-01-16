@@ -1,21 +1,46 @@
 import { Button } from 'react-bootstrap';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { Google, Facebook, LinkedIn } from '@mui/icons-material';
 
-export const AuthPageContainer = styled.div``;
+export const AuthPageContainer = styled.div`
+  display: flex;
+
+  h1 {
+    font-size: 4rem;
+  }
+`;
 
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const SwitchContainerRight = styled.div`
+export const SwitchContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: ${(props) => props.theme.red};
   color: ${(props) => props.theme.honeydew};
+  width: 50vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h1,
+  p {
+    padding: 15px;
+  }
 `;
 
-export const SwitchContainerLeft = styled.div`
-  background-color: ${(props) => props.theme.red};
-  color: ${(props) => props.theme.honeydew};
+export const SwitchContainerLeft = styled(SwitchContainer)`
+  border-radius: 0 150px 150px 0;
+`;
+
+export const SwitchContainerRight = styled(SwitchContainer)`
+  border-radius: 150px 0 0 150px;
 `;
 
 export const SwitchButton = styled(Button)`
@@ -30,10 +55,20 @@ export const SwitchButton = styled(Button)`
 
 export const AuthButton = styled(Button)`
   color: ${(props) => props.theme.honeydew};
+  width: 5vw;
+  margin: 20px;
+  border: solid 2px;
+  border-radius: 7px;
+
+  &:hover {
+    background-color: ${(props) => props.theme.honeydew};
+    color: ${(props) => props.theme.red};
+  }
 `;
 
 export const ExternalButtonsContainer = styled.div`
   display: flex;
+  margin: 20px;
 `;
 
 export const ExternalButton = styled.div`
@@ -42,14 +77,32 @@ export const ExternalButton = styled.div`
   padding: 10px;
   margin: 10px;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${(props) => props.theme.red};
+    color: ${(props) => props.theme.honeydew};
+  }
+
+  &:active {
+    background-color: ${(props) => props.theme.honeydew};
+    color: ${(props) => props.theme.red};
+  }
 `;
 
-export const SignInContainer = styled.div`
+export const AuthContainer = styled.div`
+  height: 100vh;
+  width: 50vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 `;
 
-export const SignUpContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+export const FormInput = styled.input`
+  width: 20vw;
+  height: 4vh;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
 `;
